@@ -1,0 +1,89 @@
+LACP:
+
+**********************************************************************************
+AE group: ae1
+Members:          Bndl Rx state       Mux state  Sel state
+  ethernet1/1     yes  Current        Tx_Rx      Selected
+  ethernet1/2     yes  Current        Tx_Rx      Selected
+Status:           Enabled
+Mode:             Active
+Rate:             Slow
+Max-port:         8
+Fast-failover:    Enabled
+Pre-negotiation:  Disabled
+Local:            System Priority: 32768
+                  System MAC:      e8:98:6d:00:00:00
+                  Key:             48
+Partner:          System Priority: 32667
+                  System MAC:      00:23:04:00:00:00
+                  Key:             32769
+Port State
+--------------------------------------------------------------------------------
+Interface                 Port
+              Number Priority  Mode    Rate  Key      State
+--------------------------------------------------------------------------------
+ethernet1/1    16     32768    Active  Slow  48       0x3D
+Partner        257    32768    Active  Slow  32769    0x3D
+
+ethernet1/2    17     32768    Active  Slow  48       0x3D
+Partner        16641  32768    Active  Slow  32769    0x3D
+
+Port Counters
+--------------------------------------------------------------------------------
+Interface         LACPDUs         Marker      Marker Response       Error
+              Sent     Recv     Sent Recv     Sent     Recv     Unknown  Illegal
+--------------------------------------------------------------------------------
+ethernet1/1    9794382  422971   0    0        0        0        0        0
+ethernet1/2    9794494  422973   0    0        0        0        0        0
+
+**********************************************************************************
+AE group: ae2
+Members:          Bndl Rx state       Mux state  Sel state
+  ethernet1/3     yes  Current        Tx_Rx      Selected
+  ethernet1/4     yes  Current        Tx_Rx      Selected
+Status:           Enabled
+Mode:             Active
+Rate:             Slow
+Max-port:         8
+Fast-failover:    Enabled
+Pre-negotiation:  Disabled
+Local:            System Priority: 32768
+                  System MAC:      e8:98:6d:00:00:00
+                  Key:             49
+Partner:          System Priority: 32667
+                  System MAC:      00:23:04:00:00:00
+                  Key:             32771
+Port State
+--------------------------------------------------------------------------------
+Interface                 Port
+              Number Priority  Mode    Rate  Key      State
+--------------------------------------------------------------------------------
+ethernet1/3    18     32768    Active  Slow  49       0x3D
+Partner        259    32768    Active  Slow  32771    0x3D
+
+ethernet1/4    19     32768    Active  Slow  49       0x3D
+Partner        16643  32768    Active  Slow  32771    0x3D
+
+Port Counters
+--------------------------------------------------------------------------------
+Interface         LACPDUs         Marker      Marker Response       Error
+              Sent     Recv     Sent Recv     Sent     Recv     Unknown  Illegal
+--------------------------------------------------------------------------------
+ethernet1/3    9794396  422971   0    0        0        0        0        0
+ethernet1/4    9794503  422972   0    0        0        0        0        0
+
+**********************************************************************************
+AE group: ae3
+Members:          Bndl Rx state       Mux state  Sel state
+Status:           Enabled
+Mode:             Active
+Rate:             Slow
+Max-port:         8
+Fast-failover:    Enabled
+Pre-negotiation:  Disabled
+Local:            System Priority: 32768
+                  System MAC:      e8:98:6d:00:00:00
+                  Key:             49
+Partner:          System Priority: 0
+                  System MAC:      00:00:00:00:00:00
+                  Key:             0

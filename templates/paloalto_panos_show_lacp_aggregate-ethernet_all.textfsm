@@ -1,0 +1,82 @@
+Value Required,Filldown NAME (\S+)
+Value List MEMBERS (\S+\d\/\d+)
+Value List BUNDLE (yes|no)
+Value List RX_STATE (\S+)
+Value List MUX_STATE (\S+)
+Value List SELECT_STATE (\S+)
+Value STATUS (\S+)
+Value MODE (\S+)
+Value RATE (\d+)
+Value MAX_PORT (\d+)
+Value FAST_FAILOVER (\S+)
+Value PRE_NEGOTIATION (\S+)
+Value LOCAL_PRIORITY (\d+)
+Value LOCAL_SYSTEM_MAC (\S+)
+Value LOCAL_KEY (\d+)
+Value PARTNER_PRIORITY (\d+)
+Value PARTNER_SYSTEM_MAC (\S+)
+Value PARTNER_KEY (\d+)
+Value List PORT_NUMBER (\S+)
+Value List PORT_PRIORITY (\d+)
+Value List PORT_MODE (\S+)
+Value List PORT_RATE (\S+)
+Value List PORT_KEY (\d+)
+Value List PORT_STATE (\S+)
+Value List PARTNER_PORT_NUMBER (\S+)
+Value List PARTNER_PORT_PRIORITY (\d+)
+Value List PARTNER_PORT_MODE (\S+)
+Value List PARTNER_PORT_RATE (\S+)
+Value List PARTNER_PORT_KEY (\d+)
+Value List PARTNER_PORT_STATE (\S+)
+Value List LACPDU_SENT (\d+)
+Value List LACPDU_RECEIVED (\d+)
+Value List MARKER_SENT (\d+)
+Value List MARKER_RECEIVED (\d+)
+Value List MARKER_RESPONSE_SENT (\d+)
+Value List MARKER_RESPONSE_RECEIVED (\d+)
+Value List ERROR_UNKNOWN (\d+)
+Value List ERROR_ILLEGAL (\d+)
+
+Start
+  ^\*+$$ -> Start_record
+
+Start_record
+  ^AE group: ${NAME}
+  ^Members:$$
+  ^\s+${MEMBERS}\s+${BUNDLE}\s+${RX_STATE}\s+${MUX_STATE}\s+${SELECT_STATE}$$
+  ^Status:\s+${STATUS}$$
+  ^Mode:\s+${MODE}$$
+  ^Rate:\s+${RATE}$$
+  ^Max-port:\s+${MAX_PORT}$$
+  ^Fast-failover:\s+${FAST_FAILOVER}$$
+  ^Pre-negotiation:\s+${PRE_NEGOTIATION}$$
+  ^Local:\s+System Priority:\s+${LOCAL_PRIORITY}$$ -> Local
+  ^Partner:\s+System Priority:\s+${PARTNER_PRIORITY}$$ -> Partner
+  ^Port State$$ -> Port_state
+  ^-+$$
+  ^\*+$$ -> Record
+
+Local
+  ^\s+System MAC:\s+${LOCAL_SYSTEM_MAC}$$
+  ^\s+Key:\s+${LOCAL_KEY}$$ -> Start_record
+
+Partner
+  ^\s+System MAC:\s+${PARTNER_SYSTEM_MAC}$$
+  ^\s+Key:\s+${PARTNER_KEY}$$ -> Start_record
+
+Port_state
+  ^-+$$
+  ^Interface\s+Port$$
+  ^\s+Number\s+Priority\s+Mode\s+Rate\s+Key\s+State$$
+  ^\S+\d\/\d+\s+${PORT_NUMBER}\s+${PORT_PRIORITY}\s+${PORT_MODE}\s+${PORT_RATE}\s+${PORT_KEY}\s+${PORT_STATE}$$
+  ^Partner\s+${PARTNER_PORT_NUMBER}\s+${PARTNER_PORT_PRIORITY}\s+${PARTNER_PORT_MODE}\s+${PARTNER_PORT_RATE}\s+${PARTNER_PORT_KEY}\s+${PARTNER_PORT_STATE}$$
+  ^$$
+  ^Port Counters$$ -> Port_counters
+
+Port_counters
+  ^-+$$
+  ^Interface\s+LACPDUs\s+Marker\s+Marker\s+Response\s+Error$$
+  ^\s+Sent\s+Recv\s+Sent\s+Recv\s+Sent\s+Recv\s+Unknown\s+Illegal
+  ^\S+\d\/\d+\s+${LACPDU_SENT}\s+${LACPDU_RECEIVED}\s+${MARKER_SENT}\s+${MARKER_RECEIVED}\s+${MARKER_RESPONSE_SENT}\s+${MARKER_RESPONSE_RECEIVED}\s+${ERROR_UNKNOWN}\s+${ERROR_ILLEGAL}
+  ^$$ -> Start_record
+#  ^. -> Error

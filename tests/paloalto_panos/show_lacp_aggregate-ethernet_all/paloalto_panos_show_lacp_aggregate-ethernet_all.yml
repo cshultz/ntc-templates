@@ -1,0 +1,216 @@
+---
+parsed_sample:
+  - name: "ae1"
+    members:
+      - "ethernet1/1"
+      - "ethernet1/2"
+    bundle:
+      - "yes"
+      - "yes"
+    rx_state:
+      - "Current"
+      - "Current"
+    mux_state:
+      - "Tx_Rx"
+      - "Tx_Rx"
+    select_state:
+      - "Selected"
+      - "Selected"
+    status: "Enabled"
+    mode: "Active"
+    rate: ""
+    max_port: "8"
+    fast_failover: "Enabled"
+    pre_negotiation: "Disabled"
+    local_priority: "32768"
+    local_system_mac: "e8:98:6d:00:00:00"
+    local_key: "48"
+    partner_priority: "32667"
+    partner_system_mac: "00:23:04:00:00:00"
+    partner_key: "32769"
+    port_number:
+      - "16"
+      - "17"
+    port_priority:
+      - "32768"
+      - "32768"
+    port_mode:
+      - "Active"
+      - "Active"
+    port_rate:
+      - "Slow"
+      - "Slow"
+    port_key:
+      - "48"
+      - "48"
+    port_state:
+      - "0x3D"
+      - "0x3D"
+    partner_port_number:
+      - "257"
+      - "16641"
+    partner_port_priority:
+      - "32768"
+      - "32768"
+    partner_port_mode:
+      - "Active"
+      - "Active"
+    partner_port_rate:
+      - "Slow"
+      - "Slow"
+    partner_port_key:
+      - "32769"
+      - "32769"
+    partner_port_state:
+      - "0x3D"
+      - "0x3D"
+    lacpdu_sent:
+      - "9794382"
+      - "9794494"
+    lacpdu_received:
+      - "422971"
+      - "422973"
+    marker_sent:
+      - "0"
+      - "0"
+    marker_received:
+      - "0"
+      - "0"
+    marker_response_sent:
+      - "0"
+      - "0"
+    marker_response_received:
+      - "0"
+      - "0"
+    error_unknown:
+      - "0"
+      - "0"
+    error_illegal:
+      - "0"
+      - "0"
+  - name: "ae2"
+    members:
+      - "ethernet1/3"
+      - "ethernet1/4"
+    bundle:
+      - "yes"
+      - "yes"
+    rx_state:
+      - "Current"
+      - "Current"
+    mux_state:
+      - "Tx_Rx"
+      - "Tx_Rx"
+    select_state:
+      - "Selected"
+      - "Selected"
+    status: "Enabled"
+    mode: "Active"
+    rate: ""
+    max_port: "8"
+    fast_failover: "Enabled"
+    pre_negotiation: "Disabled"
+    local_priority: "32768"
+    local_system_mac: "e8:98:6d:00:00:00"
+    local_key: "49"
+    partner_priority: "32667"
+    partner_system_mac: "00:23:04:00:00:00"
+    partner_key: "32771"
+    port_number:
+      - "18"
+      - "19"
+    port_priority:
+      - "32768"
+      - "32768"
+    port_mode:
+      - "Active"
+      - "Active"
+    port_rate:
+      - "Slow"
+      - "Slow"
+    port_key:
+      - "49"
+      - "49"
+    port_state:
+      - "0x3D"
+      - "0x3D"
+    partner_port_number:
+      - "259"
+      - "16643"
+    partner_port_priority:
+      - "32768"
+      - "32768"
+    partner_port_mode:
+      - "Active"
+      - "Active"
+    partner_port_rate:
+      - "Slow"
+      - "Slow"
+    partner_port_key:
+      - "32771"
+      - "32771"
+    partner_port_state:
+      - "0x3D"
+      - "0x3D"
+    lacpdu_sent:
+      - "9794396"
+      - "9794503"
+    lacpdu_received:
+      - "422971"
+      - "422972"
+    marker_sent:
+      - "0"
+      - "0"
+    marker_received:
+      - "0"
+      - "0"
+    marker_response_sent:
+      - "0"
+      - "0"
+    marker_response_received:
+      - "0"
+      - "0"
+    error_unknown:
+      - "0"
+      - "0"
+    error_illegal:
+      - "0"
+      - "0"
+  - name: "ae3"
+    members: []
+    bundle: []
+    rx_state: []
+    mux_state: []
+    select_state: []
+    status: "Enabled"
+    mode: "Active"
+    rate: ""
+    max_port: "8"
+    fast_failover: "Enabled"
+    pre_negotiation: "Disabled"
+    local_priority: "32768"
+    local_system_mac: "e8:98:6d:00:00:00"
+    local_key: "49"
+    partner_priority: "0"
+    partner_system_mac: "00:00:00:00:00:00"
+    partner_key: "0"
+    port_number: []
+    port_priority: []
+    port_mode: []
+    port_rate: []
+    port_key: []
+    port_state: []
+    partner_port_number: []
+    partner_port_priority: []
+    partner_port_mode: []
+    partner_port_rate: []
+    partner_port_key: []
+    partner_port_state: []
+    lacpdu_sent: []
+    lacpdu_received: []
+    marker_sent: []
+    marker_received: []
+    marker_response_sent: []
+    marker_response_received: []
+    error_unknown: []
+    error_illegal: []
